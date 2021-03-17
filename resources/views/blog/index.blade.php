@@ -6,6 +6,6 @@
     <title>Blogs</title>
 </head>
 <body>
-    {{ $blogs }};
+    {{ $blogs }}
 </body>
 </html>
