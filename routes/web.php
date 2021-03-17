@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Post;
 
 Route::get('/', function () {
     return view('home');
@@ -13,3 +16,16 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/post/create', function(){
+    DB::table('post')->insert([
+        'title'=>'Web-programming',
+        'body'=>'Web development is the work involved in developing a Web site for the Internet or an intranet.'
+    ]);
+});
+
+Route::get('/post', function(){
+    $post = Post::find(1);
+    return $post;
+});
+
