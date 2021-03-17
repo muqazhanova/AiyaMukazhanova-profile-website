@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\BlogController;
 
 use App\Models\Post;
 
@@ -29,3 +30,4 @@ Route::get('/post', function(){
     return $post;
 });
 
+Route::get('/blog/index', [BlogController::class, 'index']);
